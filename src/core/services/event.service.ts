@@ -59,7 +59,8 @@ export class EventService {
           bookingId: '2413facb-f355-4e82-b6b9-3c2f784a4681'
         }
       ],
-      image: 'https://eventmanagementimages.blob.core.windows.net/event-images/mgsreekumarall.jpeg'
+      image: 'https://eventmanagementimages.blob.core.windows.net/event-images/mgsreekumarall.jpeg',
+      comingSoon: true
     },
     {
       id: 2,
@@ -99,7 +100,8 @@ export class EventService {
           status: 'tbc'
         }
       ],
-      image: 'https://img1.wsimg.com/isteam/ip/f732a94f-7c29-4ffb-be70-523cb8b86b1c/Vidhu%20Prathap%20UK%20TOUR%202.jpg/:/cr=t:0.03%25,l:0%25,w:100%25,h:99.95%25/rs=w:600,h:800,cg:true'
+      image: 'https://img1.wsimg.com/isteam/ip/f732a94f-7c29-4ffb-be70-523cb8b86b1c/Vidhu%20Prathap%20UK%20TOUR%202.jpg/:/cr=t:0.03%25,l:0%25,w:100%25,h:99.95%25/rs=w:600,h:800,cg:true',
+      comingSoon: true
     }
   ];
 

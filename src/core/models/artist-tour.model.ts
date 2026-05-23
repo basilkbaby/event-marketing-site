@@ -19,6 +19,7 @@ export interface ArtistTour {
   dates: TourDate[];
   featured?: boolean;
   image?: string;
+  comingSoon?: boolean;
 }
 
 export interface PartnerEvent {

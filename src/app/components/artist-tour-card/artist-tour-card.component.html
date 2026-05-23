@@ -6,6 +6,9 @@
     <div class="tc-header-content">
       <div class="tc-top-row">
         <span class="tc-category">{{ tour.category }}</span>
+        @if (tour.comingSoon) {
+          <span class="tc-coming-soon-badge">Coming Soon</span>
+        }
       </div>
 
       <h2 class="tc-artist">{{ tour.artistName }}</h2>
@@ -56,7 +59,9 @@
         }
 
         <div class="dr-action">
-          @if (date.status === 'tbc') {
+          @if (tour.comingSoon) {
+            <span class="badge-coming-soon">Coming Soon</span>
+          } @else if (date.status === 'tbc') {
             <span class="badge-coming-soon">Coming Soon</span>
           } @else if (date.status === 'sold-out') {
             <span class="badge-sold-out">Sold Out</span>
