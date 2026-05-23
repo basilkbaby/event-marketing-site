@@ -70,7 +70,8 @@
               <span class="dr-price">&pound;{{ date.price }}</span>
             }
             <a [href]="getBookingUrl(date)" target="_blank" rel="noopener noreferrer"
-               class="btn-ticket" [class.limited]="date.status === 'limited'">
+               class="btn-ticket" [class.limited]="date.status === 'limited'"
+               (click)="onTicketClick(date)">
               {{ date.status === 'limited' ? 'Limited!' : 'Get Tickets' }}
             </a>
           }

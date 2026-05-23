@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
+import { AnalyticsService } from '../../../../core/services/analytics.service';
 
 @Component({
   selector: 'app-contact',
@@ -14,6 +15,7 @@ import { environment } from '../../../../environments/environment';
 export class ContactComponent {
   private fb = inject(FormBuilder);
   private http = inject(HttpClient);
+  private analytics = inject(AnalyticsService);
 
   status: 'idle' | 'sending' | 'success' | 'error' = 'idle';
 
@@ -44,7 +46,7 @@ export class ContactComponent {
       ...this.form.value
     };
     this.http.post('https://api.web3forms.com/submit', payload).subscribe({
-      next: () => { this.status = 'success'; this.form.reset(); },
+      next: () => { this.status = 'success'; this.form.reset(); this.analytics.contactFormSubmit(); },
       error: () => { this.status = 'error'; }
     });
   }
