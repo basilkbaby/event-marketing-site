@@ -1,0 +1,78 @@
+<article class="tour-card" id="tour-{{tour.id}}">
+
+  <!-- Header: artist info left, image right -->
+  <div class="tc-header" [class.has-image]="tour.image" [style.background]="tour.image ? null : tour.gradient">
+
+    <div class="tc-header-content">
+      <div class="tc-top-row">
+        <span class="tc-category">{{ tour.category }}</span>
+      </div>
+
+      <h2 class="tc-artist">{{ tour.artistName }}</h2>
+      <p class="tc-tour-name">{{ tour.tourName }}</p>
+      <p class="tc-desc">{{ tour.description }}</p>
+
+      @if (getCitiesPreview()) {
+        <p class="tc-cities">{{ getCitiesPreview() }}</p>
+      }
+
+      <div class="tc-count">
+        <span class="tc-confirmed">{{ getConfirmedDates().length }} Date{{ getConfirmedDates().length === 1 ? '' : 's' }} Confirmed</span>
+        @if (getTBCDates().length > 0) {
+          <span class="tc-tbc">+{{ getTBCDates().length }} TBC</span>
+        }
+      </div>
+    </div>
+
+    @if (tour.image) {
+      <div class="tc-image-col">
+        <img class="tc-img" [src]="tour.image" [alt]="tour.artistName" loading="lazy">
+      </div>
+    }
+
+  </div>
+
+  <!-- Dates panel: always visible -->
+  <div class="tc-dates">
+    @for (date of tour.dates; track date.id) {
+      <div class="date-row" [class.is-tbc]="date.status === 'tbc'" [class.is-sold-out]="date.status === 'sold-out'">
+
+        <div class="dr-date-block">
+          @if (date.status === 'tbc') {
+            <span class="dr-tbc-label">TBC</span>
+          } @else {
+            <span class="dr-day">{{ getDayFromDate(date.date) }}</span>
+            <span class="dr-mon">{{ getMonthFromDate(date.date) }}</span>
+          }
+        </div>
+
+        <div class="dr-venue-info">
+          <span class="dr-venue">{{ date.venue }}</span>
+          <span class="dr-city">{{ date.city }}</span>
+        </div>
+
+        @if (date.time && date.status !== 'tbc') {
+          <div class="dr-time">{{ date.time }}</div>
+        }
+
+        <div class="dr-action">
+          @if (date.status === 'tbc') {
+            <span class="badge-coming-soon">Coming Soon</span>
+          } @else if (date.status === 'sold-out') {
+            <span class="badge-sold-out">Sold Out</span>
+          } @else {
+            @if (date.price) {
+              <span class="dr-price">&pound;{{ date.price }}</span>
+            }
+            <a [href]="getBookingUrl(date)" target="_blank" rel="noopener noreferrer"
+               class="btn-ticket" [class.limited]="date.status === 'limited'">
+              {{ date.status === 'limited' ? 'Limited!' : 'Get Tickets' }}
+            </a>
+          }
+        </div>
+
+      </div>
+    }
+  </div>
+
+</article>

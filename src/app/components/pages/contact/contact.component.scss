@@ -1,0 +1,234 @@
+@use '../../../../styles/pages' as *;
+
+// ── Two-column layout ──────────────────────────────────────────────
+.ct-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 0 56px;
+  align-items: start;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 48px 0;
+  }
+}
+
+// ── Info column ────────────────────────────────────────────────────
+.ct-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  @media (max-width: 900px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 520px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ct-info-card {
+  background: #111;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ct-info-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 4px;
+}
+
+.ct-info-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1.3;
+}
+
+.ct-info-link {
+  color: $gold;
+  transition: opacity 0.15s ease;
+
+  &:hover { opacity: 0.8; }
+}
+
+.ct-wa { color: #4fce5d; }
+
+.ct-info-sub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 1px;
+}
+
+.ct-social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.ct-social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: color 0.15s ease;
+
+  svg { flex-shrink: 0; opacity: 0.7; }
+
+  &:hover { color: #fff; svg { opacity: 1; } }
+}
+
+// ── Form column ────────────────────────────────────────────────────
+.ct-form-wrap { min-width: 0; }
+
+.ct-form-title {
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+  margin: 0 0 8px;
+}
+
+.ct-form-desc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0 0 28px;
+}
+
+.ct-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ct-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @media (max-width: 580px) { grid-template-columns: 1fr; }
+}
+
+.ct-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ct-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.ct-required {
+  color: $gold;
+}
+
+.ct-optional {
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 11px;
+}
+
+%field-base {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  padding: 12px 14px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+  border-radius: 0;
+  appearance: none;
+
+  &::placeholder { color: rgba(255, 255, 255, 0.2); }
+  &:focus { border-color: rgba(200, 155, 42, 0.6); }
+  &.is-invalid { border-color: rgba(255, 80, 80, 0.6); }
+}
+
+.ct-input    { @extend %field-base; }
+.ct-textarea { @extend %field-base; resize: vertical; min-height: 130px; }
+
+.ct-error-msg {
+  font-size: 11px;
+  color: #ff7070;
+}
+
+.ct-submit-error {
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #ff7070;
+  background: rgba(255, 80, 80, 0.07);
+  border: 1px solid rgba(255, 80, 80, 0.2);
+
+  a { color: $gold; }
+}
+
+.ct-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: $gold;
+  color: #000;
+  border: none;
+  padding: 14px 36px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s ease, opacity 0.2s ease;
+  align-self: flex-start;
+
+  &:hover:not(:disabled) { background: #d4aa36; }
+  &:disabled { opacity: 0.55; cursor: not-allowed; }
+}
+
+.ct-spinner {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.ct-success {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px;
+  background: rgba(78, 186, 120, 0.08);
+  border: 1px solid rgba(78, 186, 120, 0.25);
+  font-size: 15px;
+  font-weight: 600;
+  color: #5dd98a;
+
+  svg { flex-shrink: 0; }
+}

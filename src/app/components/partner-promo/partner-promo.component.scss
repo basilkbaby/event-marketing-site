@@ -1,0 +1,103 @@
+$black: #0F0F0F;
+$gold: #C89B2A;
+$border: #E8E8E8;
+$text-muted: #6B6B6B;
+$text-faint: #AEAEAE;
+
+.partner-promo {
+  padding: 32px 0;
+}
+
+.pp-label-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.pp-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $text-faint;
+  white-space: nowrap;
+}
+
+.pp-rule {
+  flex: 1;
+  height: 1px;
+  background: $border;
+}
+
+.pp-card {
+  background: #fff;
+  border: 1px solid $border;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  border-left: 3px solid $gold;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px 20px;
+  }
+}
+
+.pp-info {
+  min-width: 0;
+
+  .pp-by {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $text-faint;
+    margin-bottom: 8px;
+  }
+
+  .pp-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: $black;
+    margin: 0 0 6px;
+    letter-spacing: -0.5px;
+  }
+
+  .pp-meta {
+    font-size: 13px;
+    color: $text-muted;
+    margin: 0 0 8px;
+  }
+
+  .pp-desc {
+    font-size: 14px;
+    color: $text-faint;
+    margin: 0;
+    max-width: 520px;
+    line-height: 1.65;
+  }
+}
+
+.pp-link {
+  display: inline-block;
+  border: 2px solid $black;
+  color: $black;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  &:hover {
+    background: $black;
+    color: #fff;
+  }
+}

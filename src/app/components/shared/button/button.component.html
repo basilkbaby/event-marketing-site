@@ -1,0 +1,21 @@
+<button 
+  [type]="type" 
+  [class]="variant + ' ' + size"
+  [disabled]="disabled"
+  (click)="onClick.emit($event)"
+  [attr.aria-label]="ariaLabel"
+>
+  <span class="button-content">
+    @if (icon) {
+      <span class="button-icon" [class.icon-only]="!showText">{{icon}}</span>
+    }
+    @if (showText) {
+      <span class="button-text">
+        <ng-content></ng-content>
+      </span>
+    }
+  </span>
+  @if (loading) {
+    <span class="loading-spinner"></span>
+  }
+</button>

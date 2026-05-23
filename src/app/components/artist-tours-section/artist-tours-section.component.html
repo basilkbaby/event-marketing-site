@@ -1,0 +1,21 @@
+<section class="artist-tours" id="events">
+  <div class="at-header">
+    <div>
+      <span class="at-subtitle">V4 Entertainments Presents</span>
+      <h2 class="at-title">Upcoming Artists</h2>
+    </div>
+  </div>
+
+  <div class="at-list">
+    @for (tour of tours(); track tour.id; let i = $index) {
+
+      <app-artist-tour-card [tour]="tour" />
+
+      <!-- Partner promo shown after first artist -->
+      @if (i === 0 && partnerEvents().length > 0) {
+        <app-partner-promo [events]="partnerEvents()" />
+      }
+
+    }
+  </div>
+</section>

@@ -1,0 +1,246 @@
+@use '../../../../styles/pages' as *;
+
+
+// ── Stats bar ─────────────────────────────────────────────────────
+.pe-stats {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid $line;
+  margin-bottom: 64px;
+
+  @media (max-width: 480px) { margin-bottom: 48px; }
+}
+
+.pe-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 48px;
+  flex: 1;
+
+  @media (max-width: 640px) { padding: 20px 16px; }
+}
+
+.pe-stat-div {
+  width: 1px;
+  background: $line;
+  flex-shrink: 0;
+}
+
+.pe-stat-num {
+  font-size: 40px;
+  font-weight: 800;
+  color: $gold;
+  letter-spacing: -1.5px;
+  line-height: 1;
+  margin-bottom: 6px;
+
+  @media (max-width: 480px) { font-size: 28px; }
+}
+
+.pe-stat-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: $text-faint;
+}
+
+// ── Year group ────────────────────────────────────────────────────
+.year-group {
+  margin-bottom: 52px;
+
+  &:last-child { margin-bottom: 0; }
+}
+
+.year-marker {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.year-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: $gold;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.year-line {
+  height: 1px;
+  flex: 1;
+  background: $line;
+}
+
+.year-count {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: $text-faint;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+// ── Event cards ───────────────────────────────────────────────────
+.year-events {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: $line;
+  border: 1px solid $line;
+}
+
+.pe-card {
+  display: flex;
+  flex-direction: row;
+  background: #111;
+  overflow: hidden;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #141414;
+
+    .pe-card-poster img { transform: scale(1.04); }
+  }
+
+  @media (max-width: 580px) { flex-direction: column; }
+}
+
+// ── Poster ────────────────────────────────────────────────────────
+.pe-card-poster {
+  position: relative;
+  width: 200px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #0a0a0a;
+
+  @media (max-width: 900px) { width: 160px; }
+  @media (max-width: 580px) {
+    width: 100%;
+    height: 240px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+}
+
+.pe-poster-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 55%, rgba(17, 17, 17, 0.55) 100%);
+
+  @media (max-width: 580px) {
+    background: linear-gradient(to bottom, transparent 40%, rgba(17, 17, 17, 0.75) 100%);
+  }
+}
+
+.pe-completed-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4px 10px;
+}
+
+// ── Card body ─────────────────────────────────────────────────────
+.pe-card-body {
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+
+  @media (max-width: 900px) { padding: 24px 24px; }
+  @media (max-width: 580px) { padding: 20px 20px 24px; }
+}
+
+.pe-category {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $gold;
+  border: 1px solid rgba(200, 155, 42, 0.35);
+  padding: 3px 10px;
+  margin-bottom: 14px;
+  align-self: flex-start;
+}
+
+.pe-artist {
+  font-size: clamp(20px, 2.8vw, 30px);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  margin: 0 0 6px;
+}
+
+.pe-tour {
+  font-size: 14px;
+  font-weight: 500;
+  color: $text-sub;
+  margin: 0 0 18px;
+}
+
+.pe-period {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: $text-faint;
+  margin: 0 0 16px;
+
+  svg {
+    width: 13px;
+    height: 13px;
+    color: $gold;
+    flex-shrink: 0;
+  }
+}
+
+.pe-cities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 18px;
+}
+
+.pe-city {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 3px 10px;
+  letter-spacing: 0.2px;
+}
+
+.pe-show-count {
+  font-size: 11px;
+  font-weight: 700;
+  color: $gold;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}

@@ -1,0 +1,54 @@
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+
+      <!-- Logo -->
+      <a routerLink="/" class="logo" (click)="onNavClick('Home')">
+        <img src="https://eventmanagementimages.blob.core.windows.net/event-images/v4-logo.webp"
+             alt="V4 Entertainments"
+             class="logo-img">
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav">
+        <ul class="nav-menu">
+          @for (item of menuItems; track item.label) {
+            <li class="nav-item">
+              <a [routerLink]="item.link"
+                 [fragment]="item.fragment"
+                 class="nav-link"
+                 [class.active]="activeLabel === item.label"
+                 (click)="onNavClick(item.label)">
+                {{ item.label }}
+              </a>
+            </li>
+          }
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" (click)="toggleMenu()" [class.active]="isMenuOpen">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" [class.open]="isMenuOpen">
+      <ul class="mobile-nav-menu">
+        @for (item of menuItems; track item.label) {
+          <li class="mobile-nav-item">
+            <a [routerLink]="item.link"
+               [fragment]="item.fragment"
+               class="mobile-nav-link"
+               [class.active]="activeLabel === item.label"
+               (click)="onNavClick(item.label); closeMenu()">
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</header>

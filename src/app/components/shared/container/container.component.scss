@@ -1,0 +1,24 @@
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+@use '../../../../styles/animations' as *;
+
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 $spacing-4;
+  width: 100%;
+
+  &.fluid {
+    max-width: 100%;
+    padding: 0 $spacing-8;
+  }
+
+  @include respond-to(md) {
+    padding: 0 $spacing-6;
+
+    &.fluid {
+      padding: 0 $spacing-4;
+    }
+  }
+}

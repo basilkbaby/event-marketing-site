@@ -1,0 +1,152 @@
+<section class="main-slider">
+  <!-- Slides -->
+  @for (slide of slides; track slide.id; let i = $index) {
+    <div 
+      class="slide" 
+      [class.active]="i === currentSlide"
+      [style.background-image]="slide.hasImage ? 'url(' + slide.image + ')' : 'none'"
+    >
+      @if (!slide.hasImage) {
+        <div class="gradient-bg">
+          @if (slide.pattern) {
+            <div class="pattern-overlay" [class]="slide.pattern"></div>
+          }
+          <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+          </div>
+        </div>
+      }
+      
+      <div class="overlay" [class.darker]="slide.type === 'completed'"></div>
+      
+      <div class="container">
+        <!-- Simple badge without colors -->
+        <div class="slide-type-badge">
+          @if (slide.type === 'featured') { FEATURED }
+          @if (slide.type === 'upcoming') { UPCOMING }
+          @if (slide.type === 'completed') { PAST EVENT }
+        </div>
+
+        <div class="slide-content">
+          <span class="pretitle">{{ slide.pretitle }}</span>
+          
+          <h2 class="title">
+            @if (slide.highlightedText) {
+              {{ slide.title }}
+              <span class="highlight">{{ slide.highlightedText }}</span>
+            } @else {
+              {{ slide.title }}
+            }
+          </h2>
+          
+          <div class="event-info">
+            <div class="date-block">
+              <span class="date-number">{{ slide.date.split(' ')[0] }}</span>
+              <span class="date-month">{{ slide.date.replace(slide.date.split(' ')[0], '').trim() }}</span>
+            </div>
+            
+            @if (slide.location) {
+              <div class="location-block">
+                <span class="location-icon">📍</span>
+                <span class="location-text">{{ slide.location }}</span>
+              </div>
+            }
+          </div>
+
+          <!-- Additional Details -->
+          <div class="additional-details">
+            @if (slide.venue) {
+              <div class="detail-item">
+                <span class="detail-icon">🏛️</span>
+                <span class="detail-text">{{ slide.venue }}</span>
+              </div>
+            }
+            @if (slide.time) {
+              <div class="detail-item">
+                <span class="detail-icon">⏰</span>
+                <span class="detail-text">{{ slide.time }}</span>
+              </div>
+            }
+            @if (slide.price && slide.type !== 'completed') {
+              <div class="detail-item price">
+                <span class="detail-icon">💰</span>
+                <span class="detail-text">${{ slide.price }}</span>
+              </div>
+            }
+            @if (slide.attendees && slide.type === 'completed') {
+              <div class="detail-item attendees">
+                <span class="detail-icon">👥</span>
+                <span class="detail-text">{{ slide.attendees }}</span>
+              </div>
+            }
+          </div>
+          
+          <p class="description">{{ slide.description }}</p>
+          
+          <!-- Gallery Preview for Completed Events -->
+          @if (slide.type === 'completed' && slide.gallery) {
+            <div class="gallery-preview">
+              <span class="gallery-label">Event Gallery</span>
+              <div class="gallery-thumbs">
+                @for (thumb of slide.gallery.slice(0, 3); track thumb) {
+                  <div class="gallery-thumb" [style.background-image]="'url(' + thumb + ')'"></div>
+                }
+                @if (slide.gallery.length > 3) {
+                  <div class="gallery-more">+{{ slide.gallery.length - 3 }}</div>
+                }
+              </div>
+            </div>
+          }
+          
+          <div class="slide-actions">
+            @if (slide.ctaText) {
+              <a [href]="slide.ctaLink || '#'" class="btn btn-primary">
+                {{ slide.ctaText }}
+              </a>
+            }
+            @if (slide.secondaryCtaText) {
+              <a [href]="slide.secondaryCtaLink || '#'" class="btn btn-outline">
+                {{ slide.secondaryCtaText }}
+              </a>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+
+  <!-- Navigation Arrows -->
+  <button class="nav-arrow prev" (click)="prevSlide()" aria-label="Previous slide">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  
+  <button class="nav-arrow next" (click)="nextSlide()" aria-label="Next slide">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <!-- Slide Counter -->
+  <div class="slide-counter">
+    <span class="current">{{ currentSlide + 1 }}</span>
+    <span class="separator">/</span>
+    <span class="total">{{ slides.length }}</span>
+  </div>
+
+  <!-- Dots Navigation - Simple dots -->
+  <div class="dots-container">
+    @for (slide of slides; track slide.id; let i = $index) {
+      <button 
+        class="dot" 
+        [class.active]="i === currentSlide"
+        (click)="goToSlide(i)"
+        [attr.aria-label]="'Go to slide ' + (i + 1)"
+      ></button>
+    }
+  </div>
+</section>

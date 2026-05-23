@@ -1,0 +1,213 @@
+$gold: #C89B2A;
+$gold-light: #D4AF37;
+$line: rgba(255, 255, 255, 0.08);
+
+.contact {
+  background: #0A0A0A;
+  padding: 80px 0;
+  border-top: 1px solid $line;
+
+  @media (max-width: 768px) { padding: 60px 0; }
+  @media (max-width: 480px) { padding: 48px 0; }
+}
+
+.ct-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  align-items: center;
+  gap: 0;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    padding: 0 32px;
+    gap: 48px;
+  }
+
+  @media (max-width: 640px) { padding: 0 20px; gap: 40px; }
+  @media (max-width: 400px) { padding: 0 16px; }
+}
+
+// ── Left ─────────────────────────────────────────
+.ct-left {
+  padding-right: 72px;
+
+  @media (max-width: 900px) { padding-right: 0; }
+}
+
+.ct-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: $gold;
+  margin-bottom: 14px;
+}
+
+.ct-title {
+  font-size: clamp(26px, 3.5vw, 48px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin: 0 0 18px;
+}
+
+.ct-desc {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.8;
+  margin: 0 0 24px;
+
+  @media (max-width: 480px) { font-size: 14px; }
+}
+
+.ct-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ct-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+
+  @media (max-width: 480px) { font-size: 13px; }
+}
+
+.ct-feat-icon {
+  width: 20px;
+  height: 20px;
+  background: rgba(200, 155, 42, 0.15);
+  border: 1px solid rgba(200, 155, 42, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: $gold;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+// ── Divider ──────────────────────────────────────
+.ct-divider {
+  width: 1px;
+  background: $line;
+  align-self: stretch;
+
+  @media (max-width: 900px) { display: none; }
+}
+
+// ── Right ─────────────────────────────────────────
+.ct-right {
+  padding-left: 72px;
+
+  @media (max-width: 900px) {
+    padding-left: 0;
+    border-top: 1px solid $line;
+    padding-top: 48px;
+  }
+
+  @media (max-width: 640px) { padding-top: 40px; }
+}
+
+.ct-contact-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 12px;
+}
+
+.ct-phone {
+  display: block;
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: color 0.2s ease;
+
+  &:hover { color: $gold; }
+}
+
+.ct-phone-note {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.3);
+  margin: 0 0 28px;
+}
+
+.ct-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.ct-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 22px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: all 0.2s ease;
+
+  @media (max-width: 400px) {
+    padding: 11px 18px;
+    font-size: 13px;
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+.ct-btn-icon {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
+.ct-btn-call {
+  background: $gold;
+  color: #000;
+
+  &:hover {
+    background: $gold-light;
+    transform: translateY(-2px);
+  }
+}
+
+.ct-btn-whatsapp {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  &:hover {
+    background: #25D366;
+    border-color: #25D366;
+    color: #fff;
+    transform: translateY(-2px);
+  }
+}
+
+.ct-privacy {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.2);
+  margin: 0;
+}

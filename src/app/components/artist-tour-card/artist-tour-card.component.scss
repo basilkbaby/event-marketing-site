@@ -1,0 +1,311 @@
+$gold: #C89B2A;
+$gold-bright: #D4AF37;
+$line: rgba(255, 255, 255, 0.08);
+$surface: rgba(255, 255, 255, 0.04);
+$surface-hover: rgba(255, 255, 255, 0.07);
+$text-sub: rgba(255, 255, 255, 0.55);
+$text-faint: rgba(255, 255, 255, 0.3);
+
+.tour-card {
+  border: 1px solid $line;
+  overflow: hidden;
+  background: #111;
+  scroll-margin-top: 24px;
+}
+
+// ── Header ──────────────────────────────────────────────────────────
+.tc-header {
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+
+  &.has-image {
+    background: #111;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.tc-header-content {
+  flex: 1;
+  min-width: 0;
+  padding: 44px 52px;
+
+  @media (max-width: 768px) { padding: 28px 28px; }
+  @media (max-width: 480px) { padding: 24px 20px; }
+}
+
+.tc-image-col {
+  width: 520px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #0A0A0A;
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 1200px) { width: 440px; }
+  @media (max-width: 1024px) { width: 340px; }
+  @media (max-width: 768px) {
+    width: 100%;
+    border-left: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+}
+
+.tc-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s ease;
+
+  .tour-card:hover & { transform: scale(1.04); }
+}
+
+.tc-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tc-category {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $gold;
+  border: 1px solid rgba(200, 155, 42, 0.5);
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+.tc-count {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.tc-confirmed {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.tc-tbc {
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.4);
+  padding: 2px 10px;
+  border-radius: 99px;
+}
+
+.tc-artist {
+  font-size: clamp(26px, 4.5vw, 54px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  margin: 0 0 6px;
+
+  @media (max-width: 480px) { letter-spacing: -1px; }
+}
+
+.tc-tour-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0 0 16px;
+
+  @media (max-width: 480px) { font-size: 14px; }
+}
+
+.tc-desc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.75;
+  max-width: 640px;
+  margin: 0 0 16px;
+
+  @media (max-width: 480px) { font-size: 13px; }
+}
+
+.tc-cities {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+  letter-spacing: 0.3px;
+  line-height: 1.6;
+}
+
+// ── Dates Panel ─────────────────────────────────────────────────────
+.tc-dates {
+  border-top: 1px solid $line;
+}
+
+.date-row {
+  display: grid;
+  grid-template-columns: 64px 1fr 200px auto;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 52px;
+  border-bottom: 1px solid $line;
+  transition: background 0.2s ease;
+
+  &:last-child { border-bottom: none; }
+  &:hover { background: $surface-hover; }
+  &.is-tbc { opacity: 0.5; }
+  &.is-sold-out { opacity: 0.6; }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 64px 1fr auto;
+    .dr-time { display: none; }
+  }
+
+  @media (max-width: 768px) {
+    padding: 16px 28px;
+    gap: 16px;
+  }
+
+  @media (max-width: 540px) {
+    grid-template-columns: 56px 1fr;
+    gap: 12px;
+    padding: 14px 20px;
+
+    .dr-time { display: none; }
+    .dr-action {
+      grid-column: 2;
+      margin-top: 4px;
+      justify-content: flex-start;
+    }
+  }
+}
+
+.dr-date-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .dr-day {
+    font-size: 26px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+
+    @media (max-width: 540px) { font-size: 22px; }
+  }
+
+  .dr-mon {
+    font-size: 10px;
+    font-weight: 600;
+    color: $text-faint;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  .dr-tbc-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: $text-faint;
+    letter-spacing: 1px;
+  }
+}
+
+.dr-venue-info {
+  min-width: 0;
+
+  .dr-venue {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .dr-city {
+    display: block;
+    font-size: 13px;
+    color: $text-sub;
+  }
+}
+
+.dr-time {
+  font-size: 13px;
+  color: $text-faint;
+  white-space: nowrap;
+}
+
+.dr-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.dr-price {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+
+  @media (max-width: 540px) { font-size: 14px; }
+}
+
+.btn-ticket {
+  display: inline-block;
+  background: $gold;
+  color: #000;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+
+  &:hover { background: $gold-bright; }
+
+  &.limited {
+    background: #D4380D;
+    color: #fff;
+    &:hover { background: #E04010; }
+  }
+
+  @media (max-width: 400px) {
+    padding: 7px 14px;
+    font-size: 12px;
+  }
+}
+
+.badge-coming-soon {
+  font-size: 11px;
+  font-weight: 700;
+  color: $gold;
+  border: 1px solid rgba(200, 155, 42, 0.35);
+  padding: 5px 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.badge-sold-out {
+  font-size: 11px;
+  font-weight: 700;
+  color: $text-faint;
+  border: 1px solid $line;
+  padding: 5px 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

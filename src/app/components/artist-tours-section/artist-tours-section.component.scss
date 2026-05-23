@@ -1,0 +1,58 @@
+$gold: #C89B2A;
+$line: rgba(255, 255, 255, 0.08);
+$text-faint: rgba(255, 255, 255, 0.3);
+
+.artist-tours {
+  padding: 88px 0;
+  background: #0A0A0A;
+  border-top: 1px solid $line;
+
+  @media (max-width: 768px) { padding: 60px 0; }
+  @media (max-width: 480px) { padding: 48px 0; }
+}
+
+.at-header {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 52px;
+  margin-bottom: 32px;
+
+  @media (max-width: 768px) { padding: 0 24px; }
+  @media (max-width: 400px) { padding: 0 16px; }
+}
+
+.at-subtitle {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: $gold;
+  margin-bottom: 10px;
+}
+
+.at-title {
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.at-list {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  app-artist-tour-card {
+    margin-bottom: 16px;
+
+    @media (max-width: 480px) { margin-bottom: 12px; }
+  }
+
+  @media (max-width: 768px) { padding: 0 24px; }
+  @media (max-width: 400px) { padding: 0 16px; }
+}

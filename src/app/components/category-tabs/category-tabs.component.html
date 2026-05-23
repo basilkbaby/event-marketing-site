@@ -1,0 +1,11 @@
+<div class="category-tabs">
+  @for (category of categories(); track category.id) {
+    <button 
+      class="tab-btn" 
+      [class.active]="category.isActive"
+      (click)="selectCategory(category.slug)"
+    >
+      {{category.name}}
+    </button>
+  }
+</div>

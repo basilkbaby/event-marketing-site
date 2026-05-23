@@ -1,0 +1,11 @@
+<section class="offer-showcase">
+  <div class="offer-section-header">
+    <span class="offer-subtitle">Ticket Deals &amp; Packages</span>
+    <h2 class="offer-title">Exclusive Offers</h2>
+  </div>
+  <div class="offers-grid">
+    @for (offer of offers(); track offer.id) {
+      <app-offer-card [offer]="offer" />
+    }
+  </div>
+</section>

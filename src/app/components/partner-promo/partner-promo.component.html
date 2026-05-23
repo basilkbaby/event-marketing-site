@@ -1,0 +1,20 @@
+@if (events.length > 0) {
+  <div class="partner-promo">
+    <div class="pp-label-row">
+      <span class="pp-label">Partner Event</span>
+      <div class="pp-rule"></div>
+    </div>
+
+    @for (event of events; track event.id) {
+      <div class="pp-card">
+        <div class="pp-info">
+          <span class="pp-by">Presented by {{ event.organizer }}</span>
+          <h3 class="pp-title">{{ event.title }}</h3>
+          <p class="pp-meta">{{ event.date }} &nbsp;&middot;&nbsp; {{ event.venue }}, {{ event.city }}</p>
+          <p class="pp-desc">{{ event.description }}</p>
+        </div>
+        <a [href]="event.ticketLink || '#'" class="pp-link">View Event &rarr;</a>
+      </div>
+    }
+  </div>
+}

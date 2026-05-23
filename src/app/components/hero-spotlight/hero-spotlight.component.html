@@ -1,0 +1,225 @@
+<section class="hero">
+  @if (featuredTour(); as tour) {
+    <div class="hero-wrap">
+
+      <!-- LEFT: Artist / tour info -->
+      <div class="hero-left">
+
+        <h1 class="headline">{{ tour.artistName }}</h1>
+
+        <div class="tour-name-row">
+          <p class="tour-name-sub">{{ tour.tourName }}</p>
+          <div class="on-sale-badge">
+            <span class="pulse-dot"></span>
+            Tickets on Sale
+          </div>
+        </div>
+
+        <p class="tour-desc">{{ tour.description }}</p>
+
+        <p class="tour-cities">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+            <circle cx="12" cy="9" r="2.5"/>
+          </svg>
+          @for (city of getConfirmedCities(tour); track city; let last = $last) {
+            <span class="city-name">{{ city }}</span>@if (!last) {<span class="city-sep">&nbsp;&middot;&nbsp;</span>}
+          }
+          @if (getTBCCount(tour) > 0) {
+            <span class="cities-more">&nbsp;+{{ getTBCCount(tour) }} more venues being announced</span>
+          }
+        </p>
+
+        <div class="stat-line">
+          <span class="sl-item"><strong>{{ getConfirmedCount(tour) }}</strong> Shows</span>
+          <span class="sl-sep">·</span>
+          <span class="sl-item">{{ getTourDateRange(tour) }}</span>
+          @if (getStartingPrice(tour); as price) {
+            <span class="sl-sep">·</span>
+            <span class="sl-item sl-price">From &pound;{{ price }}</span>
+          }
+        </div>
+
+        @if (getFirstConfirmedDate(tour); as firstDate) {
+          <div class="next-show">
+            <span class="ns-eyebrow">Next Show</span>
+            <div class="ns-body">
+              <div class="ns-date-block">
+                <span class="ns-day">{{ getDayFromDate(firstDate.date) }}</span>
+                <span class="ns-mon">{{ getMonthFromDate(firstDate.date) }}</span>
+              </div>
+              <div class="ns-details">
+                <span class="ns-full-date">{{ getDayName(firstDate.date) }}, {{ getFormattedDate(firstDate.date) }}</span>
+                <span class="ns-venue">{{ firstDate.venue }}&nbsp;&middot;&nbsp;{{ firstDate.city }}</span>
+                @if (firstDate.time) {
+                  <span class="ns-time">{{ firstDate.time }}</span>
+                }
+              </div>
+            </div>
+          </div>
+        }
+
+        <div class="cta-row">
+          <a href="#tour-{{tour.id}}" class="btn-buy">Book Tickets</a>
+          <a href="#tour-{{tour.id}}" class="btn-info">View All Dates &darr;</a>
+        </div>
+
+        <!-- Mobile only: countdown + booking after CTA -->
+        <div class="hero-mobile-panel">
+          <div class="cd-section">
+            <p class="cd-label">Tour starts in</p>
+            <div class="countdown">
+              <div class="cd-box">
+                <span class="cd-num">{{ pad(countdown().days) }}</span>
+                <span class="cd-lbl">Days</span>
+              </div>
+              <div class="cd-box">
+                <span class="cd-num">{{ pad(countdown().hours) }}</span>
+                <span class="cd-lbl">Hours</span>
+              </div>
+              <div class="cd-box">
+                <span class="cd-num">{{ pad(countdown().minutes) }}</span>
+                <span class="cd-lbl">Mins</span>
+              </div>
+              <div class="cd-box">
+                <span class="cd-num">{{ pad(countdown().seconds) }}</span>
+                <span class="cd-lbl">Secs</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-booking-strip">
+            <span class="hbs-label">Bookings &amp; Enquiries</span>
+            <div class="hbs-row">
+              <a href="tel:+447878896384" class="hbs-phone">+44 7878 896 384</a>
+              <a href="tel:+447878896384" class="hbs-btn hbs-call">Call</a>
+              <a href="https://wa.me/447878896384" target="_blank" rel="noopener noreferrer" class="hbs-btn hbs-wa">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="col-divider" aria-hidden="true"></div>
+
+      <!-- RIGHT: Image + countdown + booking -->
+      <div class="hero-right">
+
+        <a href="#tour-{{tour.id}}" class="artist-visual" [class.has-image]="tour.image"
+           [style.background]="tour.image ? null : tour.gradient">
+          @if (tour.image) {
+            <img class="av-img" [src]="tour.image" [alt]="tour.artistName" loading="eager">
+          }
+          @if (!tour.image) {
+            <div class="av-content">
+              <div class="av-initials">{{ getInitials(tour.artistName) }}</div>
+              <div class="av-meta">
+                <span class="av-category">{{ tour.category }}</span>
+                <p class="av-artist-name">{{ tour.artistName }}</p>
+                <p class="av-tour-name">{{ tour.tourName }}</p>
+                <p class="av-cities-line">{{ getConfirmedCount(tour) }} Venues &nbsp;&middot;&nbsp; {{ getTourDateRange(tour) }}</p>
+              </div>
+            </div>
+          }
+        </a>
+
+        <div class="hero-right-panel">
+          <div class="cd-section">
+            <p class="cd-label">Tour starts in</p>
+            <div class="countdown">
+              <div class="cd-box">
+                <span class="cd-num">{{ pad(countdown().days) }}</span>
+                <span class="cd-lbl">Days</span>
+              </div>
+              <div class="cd-box">
+                <span class="cd-num">{{ pad(countdown().hours) }}</span>
+                <span class="cd-lbl">Hours</span>
+              </div>
+              <div class="cd-box">
+                <span class="cd-num">{{ pad(countdown().minutes) }}</span>
+                <span class="cd-lbl">Mins</span>
+              </div>
+              <div class="cd-box">
+                <span class="cd-num">{{ pad(countdown().seconds) }}</span>
+                <span class="cd-lbl">Secs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-booking-strip">
+            <span class="hbs-label">Bookings &amp; Enquiries</span>
+            <div class="hbs-row">
+              <a href="tel:+447878896384" class="hbs-phone">+44 7878 896 384</a>
+              <a href="tel:+447878896384" class="hbs-btn hbs-call">Call</a>
+              <a href="https://wa.me/447878896384" target="_blank" rel="noopener noreferrer" class="hbs-btn hbs-wa">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM LEFT: Also Coming Up -->
+      @if (otherTours().length > 0) {
+        <div class="hero-bottom">
+          <div class="hb-header">
+            <p class="hb-eyebrow">Also Coming Up</p>
+          </div>
+          <div class="hb-cards">
+            @for (other of otherTours(); track other.id) {
+              <a href="#tour-{{other.id}}" class="hb-card">
+                <div class="hb-card-visual" [style.background]="other.image ? 'none' : other.gradient">
+                  @if (other.image) {
+                    <div class="hb-card-img" [style.background-image]="'url(' + other.image + ')'"></div>
+                  }
+                  <div class="hb-card-overlay"></div>
+                  @if (!other.image) {
+                    <div class="hb-card-initials">{{ getInitials(other.artistName) }}</div>
+                  }
+                  <span class="hb-card-cat">{{ other.category }}</span>
+                </div>
+                <div class="hb-card-body">
+                  <p class="hb-card-artist">{{ other.artistName }}</p>
+                  <p class="hb-card-tour">{{ other.tourName }}</p>
+                  <div class="hb-card-meta">
+                    <span>{{ getOtherTourFirstDate(other) }}</span>
+                    <span class="hb-dot">&middot;</span>
+                    <span>{{ getVenueDisplay(other) }}</span>
+                    @if (getConfirmedCount(other) > 0 && getTBCCount(other) > 0) {
+                      <span class="hb-dot">&middot;</span>
+                      <span class="hb-tbc">+{{ getTBCCount(other) }} more</span>
+                    }
+                  </div>
+                  @if (getStartingPrice(other); as price) {
+                    <p class="hb-card-price">From &pound;{{ price }}</p>
+                  }
+                  <span class="hb-card-cta">View Dates &nbsp;&rarr;</span>
+                </div>
+              </a>
+            }
+          </div>
+        </div>
+      }
+
+      <!-- BOTTOM RIGHT: Sponsors -->
+      <div class="hero-sponsors">
+        <p class="hs-eyebrow">Our Sponsors</p>
+        <div class="hs-grid">
+          @for (sponsor of sponsors; track sponsor.name) {
+            <a [href]="sponsor.url" target="_blank" rel="noopener noreferrer" class="hs-card">
+              <div class="hs-logo-area">
+                @if (!logoFailed(sponsor.name)) {
+                  <img [src]="sponsor.logo" [alt]="sponsor.name" class="hs-logo-img" (error)="onLogoError(sponsor.name)">
+                }
+                @if (logoFailed(sponsor.name)) {
+                  <span class="hs-fallback">{{ sponsor.shortName }}</span>
+                }
+              </div>
+              <span class="hs-name">{{ sponsor.name }}</span>
+            </a>
+          }
+        </div>
+      </div>
+
+    </div>
+  }
+</section>

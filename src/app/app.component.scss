@@ -1,0 +1,7 @@
+:host {
+  display: block;
+}
+
+::ng-deep .header {
+  transition: all 0.3s ease;
+}

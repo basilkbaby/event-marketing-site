@@ -1,0 +1,11 @@
+@use '../../../../styles/variables' as *;
+
+main {
+  overflow-x: hidden;
+  min-height: 100vh;
+  background: #0A0A0A;
+}
+
+.scroll-target {
+  scroll-margin-top: 72px;
+}

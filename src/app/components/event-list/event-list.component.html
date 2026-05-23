@@ -1,0 +1,27 @@
+<section class="event-list-section">
+  <app-container>
+    <div class="section-header">
+      <span class="section-subtitle">South Asian Music Events &mdash; UK</span>
+      <h2 class="section-title">Upcoming Shows</h2>
+    </div>
+
+    <app-category-tabs (categoryChange)="filterByCategory($event)" />
+
+    <div class="events-grid">
+      @for (event of filteredEvents(); track event.id) {
+        <app-event-card 
+          [event]="event" 
+          [featured]="event.id === 5" 
+        />
+      } @empty {
+        <div class="no-events">
+          <p>No upcoming events found for this category</p>
+        </div>
+      }
+    </div>
+
+    <div class="view-all">
+      <button class="view-all-btn">View All Events</button>
+    </div>
+  </app-container>
+</section>
