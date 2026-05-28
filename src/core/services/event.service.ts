@@ -26,7 +26,8 @@ export class EventService {
           time: 'Gates 6:00 PM · Show 7:00 PM',
           price: 25,
           status: 'on-sale',
-          bookingId: 'bd8ab0ab-ebb5-44d8-9ecb-88671b1e834a'
+          bookingId: 'bd8ab0ab-ebb5-44d8-9ecb-88671b1e834a',
+          comingSoon: true
         },
         {
           id: 102,
@@ -46,7 +47,8 @@ export class EventService {
           time: 'Gates 4:30 PM · Show 5:30 PM',
           price: 25,
           status: 'on-sale',
-          bookingId: '6fca76ca-58ce-4b8b-9b36-61507aaa1aef'
+          bookingId: '6fca76ca-58ce-4b8b-9b36-61507aaa1aef',
+          comingSoon: true
         },
         {
           id: 104,
@@ -59,8 +61,7 @@ export class EventService {
           bookingId: '2413facb-f355-4e82-b6b9-3c2f784a4681'
         }
       ],
-      image: 'https://eventmanagementimages.blob.core.windows.net/event-images/mgsreekumarall.jpeg',
-      comingSoon: true
+      image: 'https://eventmanagementimages.blob.core.windows.net/event-images/mgsreekumarall.jpeg'
     },
     {
       id: 2,
@@ -76,32 +77,35 @@ export class EventService {
           date: 'TBC',
           venue: 'TBC',
           city: 'London',
-          status: 'tbc'
+          status: 'tbc',
+          comingSoon: true
         },
         {
           id: 202,
           date: 'TBC',
           venue: 'TBC',
           city: 'Manchester',
-          status: 'tbc'
+          status: 'tbc',
+          comingSoon: true
         },
         {
           id: 203,
           date: 'TBC',
           venue: 'TBC',
           city: 'Leicester',
-          status: 'tbc'
+          status: 'tbc',
+          comingSoon: true
         },
         {
           id: 204,
           date: 'TBC',
           venue: 'TBC',
           city: 'Cardiff',
-          status: 'tbc'
+          status: 'tbc',
+          comingSoon: true
         }
       ],
-      image: 'https://img1.wsimg.com/isteam/ip/f732a94f-7c29-4ffb-be70-523cb8b86b1c/Vidhu%20Prathap%20UK%20TOUR%202.jpg/:/cr=t:0.03%25,l:0%25,w:100%25,h:99.95%25/rs=w:600,h:800,cg:true',
-      comingSoon: true
+      image: 'https://img1.wsimg.com/isteam/ip/f732a94f-7c29-4ffb-be70-523cb8b86b1c/Vidhu%20Prathap%20UK%20TOUR%202.jpg/:/cr=t:0.03%25,l:0%25,w:100%25,h:99.95%25/rs=w:600,h:800,cg:true'
     }
   ];
 

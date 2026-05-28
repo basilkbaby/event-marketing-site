@@ -7,6 +7,7 @@ export interface TourDate {
   price?: number;
   status: 'on-sale' | 'limited' | 'sold-out' | 'tbc';
   bookingId?: string;
+  comingSoon?: boolean;
 }
 
 export interface ArtistTour {
@@ -19,7 +20,6 @@ export interface ArtistTour {
   dates: TourDate[];
   featured?: boolean;
   image?: string;
-  comingSoon?: boolean;
 }
 
 export interface PartnerEvent {
