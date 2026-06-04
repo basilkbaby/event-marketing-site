@@ -28,7 +28,7 @@ export class ArtistTourCardComponent {
   }
 
   getDayFromDate(dateStr: string): string {
-    return dateStr.trim().split(' ')[0];
+    return dateStr.trim().split(' ')[0].padStart(2, '0');
   }
 
   getMonthFromDate(dateStr: string): string {

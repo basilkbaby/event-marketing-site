@@ -27,7 +27,7 @@ export class EventService {
           price: 25,
           status: 'on-sale',
           bookingId: 'bd8ab0ab-ebb5-44d8-9ecb-88671b1e834a',
-          comingSoon: true
+          comingSoon: false
         },
         {
           id: 102,
@@ -48,7 +48,7 @@ export class EventService {
           price: 25,
           status: 'on-sale',
           bookingId: '6fca76ca-58ce-4b8b-9b36-61507aaa1aef',
-          comingSoon: true
+          comingSoon: false
         },
         {
           id: 104,
@@ -59,6 +59,17 @@ export class EventService {
           price: 25,
           status: 'on-sale',
           bookingId: '2413facb-f355-4e82-b6b9-3c2f784a4681'
+        },
+        {
+          id: 105,
+          date: '7 November, 2026',
+          venue: 'Life Centre',
+          city: 'Bournemouth',
+          time: 'Gates 5:00 PM · Show 6:00 PM',
+          price: 25,
+          status: 'on-sale',
+          bookingId: '2413facb-f355-4e82-b6b9-3c2f784a4681',          
+          comingSoon: true
         }
       ],
       image: 'https://eventmanagementimages.blob.core.windows.net/event-images/mgsreekumarall.jpeg'
