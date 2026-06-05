@@ -45,7 +45,7 @@ export class EventService {
           venue: 'Memo Arts Centre',
           city: 'Cardiff',
           time: 'Gates 4:30 PM · Show 5:30 PM',
-          price: 25,
+          price: 24,
           status: 'on-sale',
           bookingId: '6fca76ca-58ce-4b8b-9b36-61507aaa1aef',
           comingSoon: false
