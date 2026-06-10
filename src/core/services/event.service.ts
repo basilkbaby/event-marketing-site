@@ -68,7 +68,15 @@ export class EventService {
           time: 'Gates 5:00 PM · Show 6:00 PM',
           price: 25,
           status: 'on-sale',
-          bookingId: '2413facb-f355-4e82-b6b9-3c2f784a4681',          
+          bookingId: '2413facb-f355-4e82-b6b9-3c2f784a4681',
+          comingSoon: true
+        },
+        {
+          id: 106,
+          date: '8 November, 2026',
+          venue: 'Assembly Hall',
+          city: 'Worthing',
+          status: 'on-sale',
           comingSoon: true
         }
       ],
