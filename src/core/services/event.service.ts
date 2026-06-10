@@ -77,7 +77,8 @@ export class EventService {
           venue: 'Assembly Hall',
           city: 'Worthing',
           status: 'on-sale',
-          comingSoon: true
+          comingSoon: true,
+          time: 'Gates 5:00 PM · Show 6:00 PM',
         }
       ],
       image: 'https://eventmanagementimages.blob.core.windows.net/event-images/mgsreekumarall.jpeg'
