@@ -126,6 +126,26 @@ export class EventService {
         }
       ],
       image: 'https://img1.wsimg.com/isteam/ip/f732a94f-7c29-4ffb-be70-523cb8b86b1c/Vidhu%20Prathap%20UK%20TOUR%202.jpg/:/cr=t:0.03%25,l:0%25,w:100%25,h:99.95%25/rs=w:600,h:800,cg:true'
+    },
+    {
+      id: 3,
+      artistName: 'Mentalist Aathi',
+      tourName: "AATHI'S INSOMNIA - UK & IRELAND TOUR 2026",
+      description: 'Mentalist Aathi brings his mind-bending live show to the UK & Ireland this December. An unforgettable evening of mentalism, illusion and psychological wonder that will leave you questioning everything you thought you knew.',
+      gradient: 'linear-gradient(135deg, #0a0014 0%, #2a0a40 60%, #0a0014 100%)',
+      category: 'Mentalism Show',
+      featured: false,
+      dates: [
+        {
+          id: 301,
+          date: 'TBC',
+          venue: 'Venue To Be Announced',
+          city: 'UK & Ireland Tour · December 2026',
+          status: 'tbc',
+          comingSoon: true
+        }
+      ],
+      image: 'https://eventmanagementimages.blob.core.windows.net/v4-entertainment/mentalist-aathi.jpeg'
     }
   ];
 
