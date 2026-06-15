@@ -139,8 +139,8 @@ export class EventService {
         {
           id: 301,
           date: 'TBC',
-          venue: 'Venue To Be Announced',
-          city: 'UK & Ireland Tour · December 2026',
+          venue: 'Venues To Be Announced',
+          city: 'UK & Ireland · December 2026',
           status: 'tbc',
           comingSoon: true
         }

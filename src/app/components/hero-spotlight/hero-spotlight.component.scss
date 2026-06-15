@@ -520,6 +520,7 @@ $text-faint: rgba(255, 255, 255, 0.35);
 // ── Bottom left: Also Coming Up ───────────────────
 .hero-bottom {
   grid-column: 1 / 2;
+  min-width: 0;
   margin-top: 52px;
   padding-top: 40px;
   padding-right: 64px;
@@ -655,10 +656,12 @@ $text-faint: rgba(255, 255, 255, 0.35);
   background: $line;
   border: 1px solid $line;
   flex: 1;
+  min-width: 0;
 }
 
 .hb-card {
   width: 100%;
+  min-width: 0;
   flex: 1;
   background: #0F0F0F;
   text-decoration: none;
