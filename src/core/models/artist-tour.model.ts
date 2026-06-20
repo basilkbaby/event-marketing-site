@@ -4,6 +4,7 @@ export interface TourDate {
   venue: string;
   city: string;
   time?: string;
+  duration?: string;
   price?: number;
   status: 'on-sale' | 'limited' | 'sold-out' | 'tbc';
   bookingId?: string;

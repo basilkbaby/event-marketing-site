@@ -167,6 +167,7 @@ $text-faint: rgba(255, 255, 255, 0.3);
   @media (max-width: 1024px) {
     grid-template-columns: 64px 1fr auto;
     .dr-time { display: none; }
+    .dr-action { grid-column: 3; }
   }
 
   @media (max-width: 768px) {
@@ -176,12 +177,13 @@ $text-faint: rgba(255, 255, 255, 0.3);
 
   @media (max-width: 540px) {
     grid-template-columns: 56px 1fr;
-    gap: 12px;
+    gap: 4px 12px;
     padding: 14px 20px;
 
     .dr-time { display: none; }
     .dr-action {
       grid-column: 2;
+      grid-row: 2;
       margin-top: 4px;
       justify-content: flex-start;
     }
@@ -189,6 +191,7 @@ $text-faint: rgba(255, 255, 255, 0.3);
 }
 
 .dr-date-block {
+  grid-column: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -220,6 +223,7 @@ $text-faint: rgba(255, 255, 255, 0.3);
 }
 
 .dr-venue-info {
+  grid-column: 2;
   min-width: 0;
 
   .dr-venue {
@@ -242,12 +246,28 @@ $text-faint: rgba(255, 255, 255, 0.3);
 }
 
 .dr-time {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
   font-size: 13px;
   color: $text-faint;
+}
+
+.dr-time-main {
   white-space: nowrap;
 }
 
+.dr-duration {
+  font-size: 11px;
+  font-weight: 600;
+  color: $text-sub;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 .dr-action {
+  grid-column: 4;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -260,8 +280,17 @@ $text-faint: rgba(255, 255, 255, 0.3);
   font-weight: 800;
   color: #fff;
   flex-shrink: 0;
+  white-space: nowrap;
 
   @media (max-width: 540px) { font-size: 14px; }
+}
+
+.dr-price-from {
+  font-size: 11px;
+  font-weight: 600;
+  color: $text-sub;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .btn-ticket {

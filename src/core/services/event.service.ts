@@ -84,6 +84,98 @@ export class EventService {
       image: 'https://eventmanagementimages.blob.core.windows.net/event-images/mgsreekumarall.jpeg'
     },
     {
+      id: 3,
+      artistName: 'Mentalist Aathi',
+      tourName: "AATHI'S INSOMNIA - UK & IRELAND TOUR 2026",
+      description: 'Mentalist Aathi brings his mind-bending live show to the UK & Ireland this December. An unforgettable evening of mentalism, illusion and psychological wonder that will leave you questioning everything you thought you knew.',
+      gradient: 'linear-gradient(135deg, #0a0014 0%, #2a0a40 60%, #0a0014 100%)',
+      category: 'Mentalism Show',
+      featured: false,
+      dates: [
+        {
+          id: 301,
+          date: '4 December, 2026',
+          venue: 'The Royal Regency',
+          city: 'London',
+          time: 'Gates 6:00 PM · Show 7:00 PM',
+          duration: '3 hrs',
+          status: 'on-sale',
+          comingSoon: true
+        },
+        {
+          id: 302,
+          date: '5 December, 2026',
+          venue: 'Venue To Be Announced',
+          city: 'TBC',
+          status: 'on-sale',
+          comingSoon: true
+        },
+        {
+          id: 303,
+          date: '6 December, 2026',
+          venue: 'Venue To Be Announced',
+          city: 'Bristol',
+          status: 'on-sale',
+          comingSoon: true
+        },
+        {
+          id: 304,
+          date: '11 December, 2026',
+          venue: 'NCC (Imperial Suite)',
+          city: 'Birmingham',
+          time: 'Gates 6:00 PM · Show 7:00 PM',
+          duration: '3 hrs',
+          status: 'on-sale',
+          comingSoon: true
+        },
+        {
+          id: 305,
+          date: '12 December, 2026',
+          venue: 'Forum Centre',
+          city: 'Manchester',
+          time: 'Gates 5:00 PM · Show 6:00 PM',
+          duration: '3 hrs',
+          status: 'on-sale',
+          comingSoon: true
+        },
+        {
+          id: 306,
+          date: '13 December, 2026',
+          venue: 'BICC (Pentland Suite)',
+          city: 'Edinburgh',
+          time: 'Gates 4:00 PM · Show 5:00 PM',
+          duration: '3 hrs',
+          status: 'on-sale',
+          comingSoon: true
+        },
+        {
+          id: 307,
+          date: '18 December, 2026',
+          venue: 'Venue To Be Announced',
+          city: 'Dublin',
+          status: 'on-sale',
+          comingSoon: true
+        },
+        {
+          id: 308,
+          date: '19 December, 2026',
+          venue: 'Venue To Be Announced',
+          city: 'Belfast',
+          status: 'on-sale',
+          comingSoon: true
+        },
+        {
+          id: 309,
+          date: '20 December, 2026',
+          venue: 'Venue To Be Announced',
+          city: 'TBC',
+          status: 'on-sale',
+          comingSoon: true
+        }
+      ],
+      image: 'https://eventmanagementimages.blob.core.windows.net/v4-entertainment/mentalist-aathi.jpeg'
+    },
+    {
       id: 2,
       artistName: 'Vidhu Prathap',
       tourName: 'Soulful Melodies - UK Tour 2027',
@@ -126,26 +218,6 @@ export class EventService {
         }
       ],
       image: 'https://img1.wsimg.com/isteam/ip/f732a94f-7c29-4ffb-be70-523cb8b86b1c/Vidhu%20Prathap%20UK%20TOUR%202.jpg/:/cr=t:0.03%25,l:0%25,w:100%25,h:99.95%25/rs=w:600,h:800,cg:true'
-    },
-    {
-      id: 3,
-      artistName: 'Mentalist Aathi',
-      tourName: "AATHI'S INSOMNIA - UK & IRELAND TOUR 2026",
-      description: 'Mentalist Aathi brings his mind-bending live show to the UK & Ireland this December. An unforgettable evening of mentalism, illusion and psychological wonder that will leave you questioning everything you thought you knew.',
-      gradient: 'linear-gradient(135deg, #0a0014 0%, #2a0a40 60%, #0a0014 100%)',
-      category: 'Mentalism Show',
-      featured: false,
-      dates: [
-        {
-          id: 301,
-          date: 'TBC',
-          venue: 'Venues To Be Announced',
-          city: 'UK & Ireland · December 2026',
-          status: 'tbc',
-          comingSoon: true
-        }
-      ],
-      image: 'https://eventmanagementimages.blob.core.windows.net/v4-entertainment/mentalist-aathi.jpeg'
     }
   ];
 

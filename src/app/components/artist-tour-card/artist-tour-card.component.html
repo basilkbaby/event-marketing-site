@@ -51,8 +51,11 @@
           <span class="dr-city">{{ date.city }}</span>
         </div>
 
-        @if (date.time && date.status !== 'tbc') {
-          <div class="dr-time">{{ date.time }}</div>
+        @if ((date.time || date.duration) && date.status !== 'tbc') {
+          <div class="dr-time">
+            @if (date.time) { <span class="dr-time-main">{{ date.time }}</span> }
+            @if (date.duration) { <span class="dr-duration">{{ date.duration }}</span> }
+          </div>
         }
 
         <div class="dr-action">
@@ -64,7 +67,7 @@
             <span class="badge-sold-out">Sold Out</span>
           } @else {
             @if (date.price) {
-              <span class="dr-price">&pound;{{ date.price }}</span>
+              <span class="dr-price"><span class="dr-price-from">From</span> &pound;{{ date.price }}</span>
             }
             <a [href]="getBookingUrl(date)" target="_blank" rel="noopener noreferrer"
                class="btn-ticket" [class.limited]="date.status === 'limited'"
