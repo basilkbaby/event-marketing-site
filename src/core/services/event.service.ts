@@ -66,10 +66,10 @@ export class EventService {
           venue: 'Life Centre',
           city: 'Bournemouth',
           time: 'Gates 5:00 PM · Show 6:00 PM',
-          price: 25,
+          price: 30,
           status: 'on-sale',
-          bookingId: '2413facb-f355-4e82-b6b9-3c2f784a4681',
-          comingSoon: true
+          bookingId: 'eed8e7b2-c1ba-49b6-9634-e13d4a073770',
+          comingSoon: false
         },
         {
           id: 106,
