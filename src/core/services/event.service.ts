@@ -100,7 +100,8 @@ export class EventService {
           time: 'Gates 6:00 PM · Show 7:00 PM',
           duration: '3 hrs',
           status: 'on-sale',
-          comingSoon: true
+          bookingId: '8cc14d57-a02d-4701-9685-46d21d5869d9',
+          comingSoon: false
         },
         {
           id: 302,
@@ -113,10 +114,13 @@ export class EventService {
         {
           id: 303,
           date: '6 December, 2026',
-          venue: 'Venue To Be Announced',
-          city: 'Bristol',
+          venue: 'Memo Arts Centre',
+          city: 'Cardiff',
+          time: 'Gates 4:30 PM · Show 5:30 PM',
+          duration: '3 hrs',
           status: 'on-sale',
-          comingSoon: true
+          bookingId: 'f3eb5817-fd2b-4d9d-978f-f2da7392c98f',
+          comingSoon: false
         },
         {
           id: 304,
@@ -126,7 +130,8 @@ export class EventService {
           time: 'Gates 6:00 PM · Show 7:00 PM',
           duration: '3 hrs',
           status: 'on-sale',
-          comingSoon: true
+          bookingId: 'b0c1cbd7-7f76-464b-b78a-39541d8bd80a',
+          comingSoon: false
         },
         {
           id: 305,
@@ -136,17 +141,19 @@ export class EventService {
           time: 'Gates 5:00 PM · Show 6:00 PM',
           duration: '3 hrs',
           status: 'on-sale',
-          comingSoon: true
+          bookingId: '7e165aac-7983-4265-aac4-8314fbfddb55',
+          comingSoon: false
         },
         {
           id: 306,
           date: '13 December, 2026',
-          venue: 'BICC (Pentland Suite)',
+          venue: 'EICC Edinburgh (The Pentland Suite)',
           city: 'Edinburgh',
           time: 'Gates 4:00 PM · Show 5:00 PM',
           duration: '3 hrs',
           status: 'on-sale',
-          comingSoon: true
+          bookingId: '5d933540-4714-4684-b0e2-0acf1720ae71',
+          comingSoon: false
         },
         {
           id: 307,
