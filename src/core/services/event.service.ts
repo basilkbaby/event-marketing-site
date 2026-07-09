@@ -149,7 +149,7 @@ export class EventService {
           date: '13 December, 2026',
           venue: 'EICC Edinburgh (The Pentland Suite)',
           city: 'Edinburgh',
-          time: 'Gates 4:00 PM · Show 5:00 PM',
+          time: 'Gates 4:30 PM · Show 5:30 PM',
           duration: '3 hrs',
           status: 'on-sale',
           bookingId: '5d933540-4714-4684-b0e2-0acf1720ae71',
