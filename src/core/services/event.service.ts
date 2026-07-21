@@ -81,7 +81,7 @@ export class EventService {
           time: 'Gates 5:00 PM · Show 6:00 PM',
         }
       ],
-      image: 'https://eventmanagementimages.blob.core.windows.net/event-images/mgsreekumarall.jpeg'
+      image: 'https://eventmanagementimages.blob.core.windows.net/event-images/mgsreekumarallv1.jpeg'
     },
     {
       id: 3,
