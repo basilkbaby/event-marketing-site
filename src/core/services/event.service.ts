@@ -77,7 +77,8 @@ export class EventService {
           venue: 'Assembly Hall',
           city: 'Worthing',
           status: 'on-sale',
-          comingSoon: true,
+          bookingId: 'b7af2f6b-afa9-49d9-b242-90254bea0aab',
+          comingSoon: false,
           time: 'Gates 5:00 PM · Show 6:00 PM',
         }
       ],
