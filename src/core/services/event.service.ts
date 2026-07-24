@@ -76,10 +76,12 @@ export class EventService {
           date: '8 November, 2026',
           venue: 'Assembly Hall',
           city: 'Worthing',
+          time: 'Gates 5:00 PM · Show 5:30 PM',
+          duration: '3 hrs',
+          price: 20,
           status: 'on-sale',
           bookingId: 'b7af2f6b-afa9-49d9-b242-90254bea0aab',
           comingSoon: false,
-          time: 'Gates 5:00 PM · Show 6:00 PM',
         }
       ],
       image: 'https://eventmanagementimages.blob.core.windows.net/event-images/mgsreekumarallv1.jpeg'
