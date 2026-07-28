@@ -162,7 +162,7 @@ export class EventService {
           id: 307,
           date: '18 December, 2026',
           venue: 'Venue To Be Announced',
-          city: 'Dublin',
+          city: 'TBC',
           status: 'on-sale',
           comingSoon: true
         },
@@ -170,7 +170,7 @@ export class EventService {
           id: 308,
           date: '19 December, 2026',
           venue: 'Venue To Be Announced',
-          city: 'Belfast',
+          city: 'Dublin',
           status: 'on-sale',
           comingSoon: true
         },
@@ -178,7 +178,7 @@ export class EventService {
           id: 309,
           date: '20 December, 2026',
           venue: 'Venue To Be Announced',
-          city: 'TBC',
+          city: 'Belfast',
           status: 'on-sale',
           comingSoon: true
         }
