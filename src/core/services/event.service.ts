@@ -179,6 +179,7 @@ export class EventService {
           date: '20 December, 2026',
           venue: 'Europa Hotel',
           city: 'Belfast',
+          time: 'Gates 5:30 PM · Ends 10:00 PM',
           status: 'on-sale',
           bookingUrl: 'https://jaksquare.uk/tickets/insomnia/',
           comingSoon: false
