@@ -177,10 +177,11 @@ export class EventService {
         {
           id: 309,
           date: '20 December, 2026',
-          venue: 'Venue To Be Announced',
+          venue: 'Europa Hotel',
           city: 'Belfast',
           status: 'on-sale',
-          comingSoon: true
+          bookingUrl: 'https://jaksquare.uk/tickets/insomnia/',
+          comingSoon: false
         }
       ],
       image: 'https://eventmanagementimages.blob.core.windows.net/v4-entertainment/mentalist-aathi.jpeg'

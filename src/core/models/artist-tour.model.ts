@@ -8,6 +8,7 @@ export interface TourDate {
   price?: number;
   status: 'on-sale' | 'limited' | 'sold-out' | 'tbc';
   bookingId?: string;
+  bookingUrl?: string;
   comingSoon?: boolean;
 }
 

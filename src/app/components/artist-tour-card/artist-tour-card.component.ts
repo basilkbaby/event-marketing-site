@@ -37,6 +37,7 @@ export class ArtistTourCardComponent {
   }
 
   getBookingUrl(date: TourDate): string {
+    if (date.bookingUrl) return date.bookingUrl;
     if (!date.bookingId) return '#';
     return `${environment.bookingBaseUrl}/events/${date.bookingId}`;
   }
@@ -49,12 +50,12 @@ export class ArtistTourCardComponent {
       date: date.date,
       price: date.price
     });
-    if (date.bookingId) {
+    if (date.bookingId || date.bookingUrl) {
       this.analytics.bookingRedirect({
         artistName: this.tour.artistName,
         tourName: this.tour.tourName,
         city: date.city,
-        bookingId: date.bookingId
+        bookingId: date.bookingId ?? date.bookingUrl!
       });
     }
   }
