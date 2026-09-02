@@ -109,10 +109,13 @@ export class EventService {
         {
           id: 302,
           date: '5 December, 2026',
-          venue: 'Venue To Be Announced',
-          city: 'TBC',
+          venue: 'Hatch End School Theatre',
+          city: 'Harrow',
+          time: 'Gates 4:00 PM · Show 5:00 PM',
+          duration: '3 hrs',
           status: 'on-sale',
-          comingSoon: true
+          bookingId: '001709a3-076d-4bf4-b684-481ee8da2420',
+          comingSoon: false
         },
         {
           id: 303,
