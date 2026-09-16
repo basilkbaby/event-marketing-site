@@ -164,28 +164,41 @@ export class EventService {
         {
           id: 307,
           date: '18 December, 2026',
-          venue: 'Venue To Be Announced',
-          city: 'TBC',
+          venue: 'Aura Leisure Centre',
+          city: 'Letterkenny, Ireland',
+          time: 'Gates 6:00 PM · Show 7:00 PM',
           status: 'on-sale',
-          comingSoon: true
+          bookingUrl: 'https://a4entertainment.ie/',
+          comingSoon: false
         },
         {
           id: 308,
           date: '19 December, 2026',
           venue: 'Venue To Be Announced',
           city: 'Dublin',
+          time: 'Gates 5:00 PM · Show 6:00 PM',
           status: 'on-sale',
-          comingSoon: true
+          bookingUrl: 'https://www.tickettailor.com/events/jaksquareeventsllp',
+          comingSoon: false
         },
         {
           id: 309,
           date: '20 December, 2026',
           venue: 'Europa Hotel',
           city: 'Belfast',
-          time: 'Gates 5:30 PM · Ends 10:00 PM',
+          time: 'Gates 4:30 PM · Show 5:30 PM',
           status: 'on-sale',
-          bookingUrl: 'https://jaksquare.uk/tickets/insomnia/',
+          bookingUrl: 'https://www.tickettailor.com/events/jaksquareeventsllp/2348479',
           comingSoon: false
+        },
+        {
+          id: 310,
+          date: '21 December, 2026',
+          venue: 'Venue To Be Announced',
+          city: 'Kilkenny, Ireland',
+          time: 'Gates 6:00 PM · Show 7:00 PM',
+          status: 'on-sale',
+          comingSoon: true
         }
       ],
       image: 'https://eventmanagementimages.blob.core.windows.net/v4-entertainment/mentalist-aathi.jpeg'
