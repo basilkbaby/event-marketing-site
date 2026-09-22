@@ -168,7 +168,7 @@ export class EventService {
           city: 'Letterkenny, Ireland',
           time: 'Gates 6:00 PM · Show 7:00 PM',
           status: 'on-sale',
-          bookingUrl: 'https://a4entertainment.ie/',
+          bookingUrl: 'https://a4entertainment.ie/event-booking/events/mentalist-aathis-insomnia/',
           comingSoon: false
         },
         {
