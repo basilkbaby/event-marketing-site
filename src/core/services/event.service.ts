@@ -214,38 +214,78 @@ export class EventService {
       dates: [
         {
           id: 201,
-          date: 'TBC',
-          venue: 'TBC',
-          city: 'London',
-          status: 'tbc',
+          date: '12 February, 2027',
+          venue: 'Venue To Be Announced',
+          city: 'TBC',
+          status: 'on-sale',
           comingSoon: true
         },
         {
           id: 202,
-          date: 'TBC',
-          venue: 'TBC',
-          city: 'Manchester',
-          status: 'tbc',
+          date: '13 February, 2027',
+          venue: 'Venue To Be Announced',
+          city: 'TBC',
+          status: 'on-sale',
           comingSoon: true
         },
         {
           id: 203,
-          date: 'TBC',
-          venue: 'TBC',
-          city: 'Leicester',
-          status: 'tbc',
+          date: '14 February, 2027',
+          venue: 'Venue To Be Announced',
+          city: 'TBC',
+          status: 'on-sale',
           comingSoon: true
         },
         {
           id: 204,
-          date: 'TBC',
-          venue: 'TBC',
+          date: '19 February, 2027',
+          venue: 'Venue To Be Announced',
+          city: 'Leicester',
+          status: 'on-sale',
+          comingSoon: true
+        },
+        {
+          id: 205,
+          date: '20 February, 2027',
+          venue: 'Venue To Be Announced',
+          city: 'London',
+          status: 'on-sale',
+          comingSoon: true
+        },
+        {
+          id: 206,
+          date: '21 February, 2027',
+          venue: 'Venue To Be Announced',
           city: 'Cardiff',
-          status: 'tbc',
+          status: 'on-sale',
+          comingSoon: true
+        },
+        {
+          id: 207,
+          date: '26 February, 2027',
+          venue: 'Venue To Be Announced',
+          city: 'TBC',
+          status: 'on-sale',
+          comingSoon: true
+        },
+        {
+          id: 208,
+          date: '27 February, 2027',
+          venue: 'Venue To Be Announced',
+          city: 'Wigan',
+          status: 'on-sale',
+          comingSoon: true
+        },
+        {
+          id: 209,
+          date: '28 February, 2027',
+          venue: 'Venue To Be Announced',
+          city: 'Stoke-on-Trent',
+          status: 'on-sale',
           comingSoon: true
         }
       ],
-      image: 'https://img1.wsimg.com/isteam/ip/f732a94f-7c29-4ffb-be70-523cb8b86b1c/Vidhu%20Prathap%20UK%20TOUR%202.jpg/:/cr=t:0.03%25,l:0%25,w:100%25,h:99.95%25/rs=w:600,h:800,cg:true'
+      image: 'https://eventmanagementimages.blob.core.windows.net/v4-entertainment/vidhu-prathap/vidhu-prathap-general.jpeg'
     }
   ];
 
