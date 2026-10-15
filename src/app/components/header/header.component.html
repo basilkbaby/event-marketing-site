@@ -26,6 +26,14 @@
         </ul>
       </nav>
 
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="https://booking.v4entertainments.co.uk/tickets/lookup"
+           target="_blank" rel="noopener noreferrer" class="btn-ticket">
+          View Tickets
+        </a>
+      </div>
+
       <!-- Mobile Menu Button -->
       <button class="mobile-menu-btn" (click)="toggleMenu()" [class.active]="isMenuOpen">
         <span class="bar"></span>
@@ -49,6 +57,11 @@
           </li>
         }
       </ul>
+      <a href="https://booking.v4entertainments.co.uk/tickets/lookup"
+         target="_blank" rel="noopener noreferrer"
+         class="btn-ticket-mobile" (click)="closeMenu()">
+        View Tickets
+      </a>
     </div>
   </div>
 </header>

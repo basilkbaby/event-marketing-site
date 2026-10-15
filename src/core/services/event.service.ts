@@ -174,11 +174,11 @@ export class EventService {
         {
           id: 308,
           date: '19 December, 2026',
-          venue: 'Venue To Be Announced',
-          city: 'Dublin',
+          venue: 'The Hub',
+          city: 'Kilkenny, Ireland',
           time: 'Gates 5:00 PM · Show 6:00 PM',
           status: 'on-sale',
-          bookingUrl: 'https://www.tickettailor.com/events/jaksquareeventsllp',
+          bookingUrl: 'https://nexaevents.ie/newsite/index.html',
           comingSoon: false
         },
         {
@@ -190,15 +190,6 @@ export class EventService {
           status: 'on-sale',
           bookingUrl: 'https://www.tickettailor.com/events/jaksquareeventsllp/2348479',
           comingSoon: false
-        },
-        {
-          id: 310,
-          date: '21 December, 2026',
-          venue: 'Venue To Be Announced',
-          city: 'Kilkenny, Ireland',
-          time: 'Gates 6:00 PM · Show 7:00 PM',
-          status: 'on-sale',
-          comingSoon: true
         }
       ],
       image: 'https://eventmanagementimages.blob.core.windows.net/v4-entertainment/mentalist-aathi.jpeg'
