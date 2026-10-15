@@ -14,25 +14,23 @@
         <ul class="nav-menu">
           @for (item of menuItems; track item.label) {
             <li class="nav-item">
-              <a [routerLink]="item.link"
-                 [fragment]="item.fragment"
-                 class="nav-link"
-                 [class.active]="activeLabel === item.label"
-                 (click)="onNavClick(item.label)">
-                {{ item.label }}
-              </a>
+              @if (item.external) {
+                <a [href]="item.external" target="_blank" rel="noopener noreferrer" class="nav-link">
+                  {{ item.label }}
+                </a>
+              } @else {
+                <a [routerLink]="item.link"
+                   [fragment]="item.fragment"
+                   class="nav-link"
+                   [class.active]="activeLabel === item.label"
+                   (click)="onNavClick(item.label)">
+                  {{ item.label }}
+                </a>
+              }
             </li>
           }
         </ul>
       </nav>
-
-      <!-- Header Actions -->
-      <div class="header-actions">
-        <a href="https://booking.v4entertainments.co.uk/tickets/lookup"
-           target="_blank" rel="noopener noreferrer" class="btn-ticket">
-          View Tickets
-        </a>
-      </div>
 
       <!-- Mobile Menu Button -->
       <button class="mobile-menu-btn" (click)="toggleMenu()" [class.active]="isMenuOpen">
@@ -47,21 +45,23 @@
       <ul class="mobile-nav-menu">
         @for (item of menuItems; track item.label) {
           <li class="mobile-nav-item">
-            <a [routerLink]="item.link"
-               [fragment]="item.fragment"
-               class="mobile-nav-link"
-               [class.active]="activeLabel === item.label"
-               (click)="onNavClick(item.label); closeMenu()">
-              {{ item.label }}
-            </a>
+            @if (item.external) {
+              <a [href]="item.external" target="_blank" rel="noopener noreferrer"
+                 class="mobile-nav-link" (click)="closeMenu()">
+                {{ item.label }}
+              </a>
+            } @else {
+              <a [routerLink]="item.link"
+                 [fragment]="item.fragment"
+                 class="mobile-nav-link"
+                 [class.active]="activeLabel === item.label"
+                 (click)="onNavClick(item.label); closeMenu()">
+                {{ item.label }}
+              </a>
+            }
           </li>
         }
       </ul>
-      <a href="https://booking.v4entertainments.co.uk/tickets/lookup"
-         target="_blank" rel="noopener noreferrer"
-         class="btn-ticket-mobile" (click)="closeMenu()">
-        View Tickets
-      </a>
     </div>
   </div>
 </header>

@@ -12,11 +12,12 @@ import { filter } from 'rxjs/operators';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   menuItems = [
-    { label: 'Home',        link: '/',            fragment: undefined },
-    { label: 'Events',      link: '/',            fragment: 'events'  },
-    { label: 'Past Events', link: '/past-events', fragment: undefined },
-    { label: 'Contact Us',  link: '/contact',     fragment: undefined },
-    { label: 'About Us',    link: '/',            fragment: 'about'   },
+    { label: 'Home',        link: '/',            fragment: undefined, external: undefined },
+    { label: 'Events',      link: '/',            fragment: 'events',  external: undefined },
+    { label: 'Past Events', link: '/past-events', fragment: undefined, external: undefined },
+    { label: 'Contact Us',  link: '/contact',     fragment: undefined, external: undefined },
+    { label: 'About Us',    link: '/',            fragment: 'about',   external: undefined },
+    { label: 'View Tickets', link: undefined,     fragment: undefined, external: 'https://booking.v4entertainments.co.uk/tickets/lookup' },
   ];
 
   activeLabel = 'Home';
