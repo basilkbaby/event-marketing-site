@@ -207,7 +207,7 @@ export class EventService {
           id: 201,
           date: '12 February, 2027',
           venue: 'Venue To Be Announced',
-          city: 'TBC',
+          city: 'Leeds',
           status: 'on-sale',
           comingSoon: true
         },
@@ -215,7 +215,7 @@ export class EventService {
           id: 202,
           date: '13 February, 2027',
           venue: 'Venue To Be Announced',
-          city: 'TBC',
+          city: 'Glasgow',
           status: 'on-sale',
           comingSoon: true
         },
@@ -231,7 +231,7 @@ export class EventService {
           id: 204,
           date: '19 February, 2027',
           venue: 'Venue To Be Announced',
-          city: 'Leicester',
+          city: 'London',
           status: 'on-sale',
           comingSoon: true
         },
@@ -239,7 +239,7 @@ export class EventService {
           id: 205,
           date: '20 February, 2027',
           venue: 'Venue To Be Announced',
-          city: 'London',
+          city: 'Maidstone',
           status: 'on-sale',
           comingSoon: true
         },
@@ -255,7 +255,7 @@ export class EventService {
           id: 207,
           date: '26 February, 2027',
           venue: 'Venue To Be Announced',
-          city: 'TBC',
+          city: 'Leicester',
           status: 'on-sale',
           comingSoon: true
         },
@@ -263,7 +263,7 @@ export class EventService {
           id: 208,
           date: '27 February, 2027',
           venue: 'Venue To Be Announced',
-          city: 'Wigan',
+          city: 'Manchester',
           status: 'on-sale',
           comingSoon: true
         },
@@ -276,7 +276,7 @@ export class EventService {
           comingSoon: true
         }
       ],
-      image: 'https://eventmanagementimages.blob.core.windows.net/v4-entertainment/vidhu-prathap/vidhu-prathap-general.jpeg'
+      image: 'https://eventmanagementimages.blob.core.windows.net/v4-entertainment/vidhu-prathap/VPUK.jpg.jpeg'
     }
   ];
 
