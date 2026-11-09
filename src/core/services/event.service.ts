@@ -10,90 +10,13 @@ export class EventService {
   // ── Artist Tours ─────────────────────────────────────────────────
   private artistToursData: ArtistTour[] = [
     {
-      id: 1,
-      artistName: 'MG SREEKUMAR',
-      tourName: 'LIVE KONDATTAM - UK TOUR 2026',
-      description: 'One of the most celebrated voices in Malayalam cinema, M.G. Sreekumar brings his iconic playback hits and film songs to the UK. An evening of nostalgia, devotion and pure melody spanning five decades of musical brilliance.',
-      gradient: 'linear-gradient(135deg, #1a0f00 0%, #3d2200 60%, #1a0f00 100%)',
-      category: 'Music Concert',
-      featured: true,
-      dates: [
-        {
-          id: 101,
-          date: '30 October, 2026',
-          venue: 'Maher Centre',
-          city: 'Leicester',
-          time: 'Gates 6:00 PM · Show 7:00 PM',
-          price: 25,
-          status: 'on-sale',
-          bookingId: 'bd8ab0ab-ebb5-44d8-9ecb-88671b1e834a',
-          comingSoon: false
-        },
-        {
-          id: 102,
-          date: '31 October, 2026',
-          venue: 'Forum Centre',
-          city: 'Manchester',
-          time: 'Gates 5:00 PM · Show 6:00 PM',
-          price: 30,
-          status: 'on-sale',
-          bookingId: 'c5e96655-2b29-42f3-b0c4-e8a6c7f4f642'
-        },
-        {
-          id: 103,
-          date: '1 November, 2026',
-          venue: 'Memo Arts Centre',
-          city: 'Cardiff',
-          time: 'Gates 4:30 PM · Show 5:30 PM',
-          price: 24,
-          status: 'on-sale',
-          bookingId: '6fca76ca-58ce-4b8b-9b36-61507aaa1aef',
-          comingSoon: false
-        },
-        {
-          id: 104,
-          date: '6 November, 2026',
-          venue: 'The Royal Regency',
-          city: 'London',
-          time: 'Gates 6:00 PM · Show 7:00 PM',
-          price: 25,
-          status: 'on-sale',
-          bookingId: '2413facb-f355-4e82-b6b9-3c2f784a4681'
-        },
-        {
-          id: 105,
-          date: '7 November, 2026',
-          venue: 'Life Centre',
-          city: 'Bournemouth',
-          time: 'Gates 5:00 PM · Show 6:00 PM',
-          price: 30,
-          status: 'on-sale',
-          bookingId: 'eed8e7b2-c1ba-49b6-9634-e13d4a073770',
-          comingSoon: false
-        },
-        {
-          id: 106,
-          date: '8 November, 2026',
-          venue: 'Assembly Hall',
-          city: 'Worthing',
-          time: 'Gates 5:00 PM · Show 5:30 PM',
-          duration: '3 hrs',
-          price: 20,
-          status: 'on-sale',
-          bookingId: 'b7af2f6b-afa9-49d9-b242-90254bea0aab',
-          comingSoon: false,
-        }
-      ],
-      image: 'https://eventmanagementimages.blob.core.windows.net/event-images/mgsreekumarallv1.jpeg'
-    },
-    {
       id: 3,
       artistName: 'Mentalist Aathi',
       tourName: "AATHI'S INSOMNIA - UK & IRELAND TOUR 2026",
       description: 'Mentalist Aathi brings his mind-bending live show to the UK & Ireland this December. An unforgettable evening of mentalism, illusion and psychological wonder that will leave you questioning everything you thought you knew.',
       gradient: 'linear-gradient(135deg, #0a0014 0%, #2a0a40 60%, #0a0014 100%)',
       category: 'Mentalism Show',
-      featured: false,
+      featured: true,
       dates: [
         {
           id: 301,

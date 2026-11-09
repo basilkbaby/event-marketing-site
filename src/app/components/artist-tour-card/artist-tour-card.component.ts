@@ -36,6 +36,29 @@ export class ArtistTourCardComponent {
     return parts[1]?.substring(0, 3).toUpperCase() ?? '';
   }
 
+  // A confirmed date counts as past once its day is over (it's still shown
+  // as bookable for the whole day of the show itself).
+  isPast(date: TourDate): boolean {
+    if (date.status === 'tbc') return false;
+    const todayStart = new Date();
+    todayStart.setHours(0, 0, 0, 0);
+    return this.parseDate(date.date).getTime() < todayStart.getTime();
+  }
+
+  private parseDate(dateStr: string): Date {
+    const cleaned = dateStr.replace(',', '').trim();
+    const parts = cleaned.split(' ');
+    if (parts.length === 3) {
+      const months: Record<string, number> = {
+        January: 0, February: 1, March: 2, April: 3,
+        May: 4, June: 5, July: 6, August: 7,
+        September: 8, October: 9, November: 10, December: 11
+      };
+      return new Date(parseInt(parts[2], 10), months[parts[1]] ?? 0, parseInt(parts[0], 10));
+    }
+    return new Date(dateStr);
+  }
+
   getBookingUrl(date: TourDate): string {
     if (date.bookingUrl) return date.bookingUrl;
     if (!date.bookingId) return '#';

@@ -35,7 +35,7 @@
   <!-- Dates panel: always visible -->
   <div class="tc-dates">
     @for (date of tour.dates; track date.id) {
-      <div class="date-row" [class.is-tbc]="date.status === 'tbc'" [class.is-sold-out]="date.status === 'sold-out'">
+      <div class="date-row" [class.is-tbc]="date.status === 'tbc'" [class.is-sold-out]="date.status === 'sold-out'" [class.is-past]="isPast(date)">
 
         <div class="dr-date-block">
           @if (date.status === 'tbc') {
@@ -59,7 +59,9 @@
         }
 
         <div class="dr-action">
-          @if (date.comingSoon) {
+          @if (isPast(date)) {
+            <span class="badge-ended">Event Ended</span>
+          } @else if (date.comingSoon) {
             <span class="badge-coming-soon">Coming Soon</span>
           } @else if (date.status === 'tbc') {
             <span class="badge-coming-soon">Coming Soon</span>

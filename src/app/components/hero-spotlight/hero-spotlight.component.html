@@ -67,25 +67,33 @@
         <!-- Mobile only: countdown + booking after CTA -->
         <div class="hero-mobile-panel">
           <div class="cd-section">
-            <p class="cd-label">Tour starts in</p>
-            <div class="countdown">
-              <div class="cd-box">
-                <span class="cd-num">{{ pad(countdown().days) }}</span>
-                <span class="cd-lbl">Days</span>
+            @if (tourStarted()) {
+              <p class="cd-label">Tour Status</p>
+              <div class="cd-started">
+                <span class="cd-started-dot"></span>
+                Tour Started - Get Your Tickets Now
               </div>
-              <div class="cd-box">
-                <span class="cd-num">{{ pad(countdown().hours) }}</span>
-                <span class="cd-lbl">Hours</span>
+            } @else {
+              <p class="cd-label">Tour starts in</p>
+              <div class="countdown">
+                <div class="cd-box">
+                  <span class="cd-num">{{ pad(countdown().days) }}</span>
+                  <span class="cd-lbl">Days</span>
+                </div>
+                <div class="cd-box">
+                  <span class="cd-num">{{ pad(countdown().hours) }}</span>
+                  <span class="cd-lbl">Hours</span>
+                </div>
+                <div class="cd-box">
+                  <span class="cd-num">{{ pad(countdown().minutes) }}</span>
+                  <span class="cd-lbl">Mins</span>
+                </div>
+                <div class="cd-box">
+                  <span class="cd-num">{{ pad(countdown().seconds) }}</span>
+                  <span class="cd-lbl">Secs</span>
+                </div>
               </div>
-              <div class="cd-box">
-                <span class="cd-num">{{ pad(countdown().minutes) }}</span>
-                <span class="cd-lbl">Mins</span>
-              </div>
-              <div class="cd-box">
-                <span class="cd-num">{{ pad(countdown().seconds) }}</span>
-                <span class="cd-lbl">Secs</span>
-              </div>
-            </div>
+            }
           </div>
           <div class="hero-booking-strip">
             <span class="hbs-label">Bookings &amp; Enquiries</span>
@@ -125,25 +133,33 @@
 
         <div class="hero-right-panel">
           <div class="cd-section">
-            <p class="cd-label">Tour starts in</p>
-            <div class="countdown">
-              <div class="cd-box">
-                <span class="cd-num">{{ pad(countdown().days) }}</span>
-                <span class="cd-lbl">Days</span>
+            @if (tourStarted()) {
+              <p class="cd-label">Tour Status</p>
+              <div class="cd-started">
+                <span class="cd-started-dot"></span>
+                Tour Started — Get Your Tickets Now
               </div>
-              <div class="cd-box">
-                <span class="cd-num">{{ pad(countdown().hours) }}</span>
-                <span class="cd-lbl">Hours</span>
+            } @else {
+              <p class="cd-label">Tour starts in</p>
+              <div class="countdown">
+                <div class="cd-box">
+                  <span class="cd-num">{{ pad(countdown().days) }}</span>
+                  <span class="cd-lbl">Days</span>
+                </div>
+                <div class="cd-box">
+                  <span class="cd-num">{{ pad(countdown().hours) }}</span>
+                  <span class="cd-lbl">Hours</span>
+                </div>
+                <div class="cd-box">
+                  <span class="cd-num">{{ pad(countdown().minutes) }}</span>
+                  <span class="cd-lbl">Mins</span>
+                </div>
+                <div class="cd-box">
+                  <span class="cd-num">{{ pad(countdown().seconds) }}</span>
+                  <span class="cd-lbl">Secs</span>
+                </div>
               </div>
-              <div class="cd-box">
-                <span class="cd-num">{{ pad(countdown().minutes) }}</span>
-                <span class="cd-lbl">Mins</span>
-              </div>
-              <div class="cd-box">
-                <span class="cd-num">{{ pad(countdown().seconds) }}</span>
-                <span class="cd-lbl">Secs</span>
-              </div>
-            </div>
+            }
           </div>
 
           <div class="hero-booking-strip">

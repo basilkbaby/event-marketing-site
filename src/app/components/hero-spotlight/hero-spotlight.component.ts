@@ -29,9 +29,42 @@ export class HeroSpotlightComponent implements OnInit, OnDestroy {
 
   tours = this.eventService.getArtistTours();
 
+  // Picks the tour to spotlight: whichever has the soonest date that hasn't
+  // passed yet, so the hero automatically rolls from one tour to the next as
+  // dates go by instead of staying pinned to a tour that has already finished.
+  // An explicit `featured` flag still wins as long as that tour has a date left.
   featuredTour = computed(() => {
     const tours = this.tours();
-    return tours.find(t => t.featured) ?? tours[0] ?? null;
+    if (tours.length === 0) return null;
+
+    const withNext = tours
+      .map(tour => ({ tour, next: this.getNextUpcomingDate(tour) }))
+      .filter((x): x is { tour: ArtistTour; next: TourDate } => x.next !== null);
+
+    if (withNext.length > 0) {
+      withNext.sort((a, b) => this.parseDate(a.next.date).getTime() - this.parseDate(b.next.date).getTime());
+      return withNext.find(x => x.tour.featured)?.tour ?? withNext[0].tour;
+    }
+
+    // Nothing upcoming anywhere (everything has passed) — fall back to the
+    // explicit flag, else the first tour, so the hero still shows something.
+    return tours.find(t => t.featured) ?? tours[0];
+  });
+
+  // True once the featured tour's earliest confirmed date is today or in the
+  // past — at that point a "Tour starts in" countdown no longer makes sense.
+  tourStarted = computed(() => {
+    const tour = this.featuredTour();
+    if (!tour) return false;
+    const confirmed = tour.dates.filter(d => d.status !== 'tbc');
+    if (confirmed.length === 0) return false;
+
+    const earliest = confirmed.reduce((min, d) =>
+      this.parseDate(d.date).getTime() < this.parseDate(min.date).getTime() ? d : min
+    );
+    const todayStart = new Date();
+    todayStart.setHours(0, 0, 0, 0);
+    return this.parseDate(earliest.date).getTime() <= todayStart.getTime();
   });
 
   otherTours = computed(() => {
@@ -75,10 +108,25 @@ export class HeroSpotlightComponent implements OnInit, OnDestroy {
     return new Date(dateStr);
   }
 
+  // Returns the earliest confirmed date that hasn't passed yet (today still
+  // counts as upcoming), or null if every confirmed date for this tour is in
+  // the past.
+  private getNextUpcomingDate(tour: ArtistTour): TourDate | null {
+    const todayStart = new Date();
+    todayStart.setHours(0, 0, 0, 0);
+
+    const upcoming = tour.dates
+      .filter(d => d.status !== 'tbc')
+      .filter(d => this.parseDate(d.date).getTime() >= todayStart.getTime());
+
+    if (upcoming.length === 0) return null;
+    return upcoming.sort((a, b) => this.parseDate(a.date).getTime() - this.parseDate(b.date).getTime())[0];
+  }
+
   private updateCountdown() {
     const tour = this.featuredTour();
     if (!tour) return;
-    const firstDate = tour.dates.find(d => d.status !== 'tbc');
+    const firstDate = this.getFirstConfirmedDate(tour);
     if (!firstDate) return;
     const diff = this.parseDate(firstDate.date).getTime() - Date.now();
     if (diff <= 0) {
@@ -137,14 +185,16 @@ export class HeroSpotlightComponent implements OnInit, OnDestroy {
   }
 
   getOtherTourFirstDate(tour: ArtistTour): string {
-    const first = tour.dates.find(d => d.status !== 'tbc');
-    if (!first) return 'Date TBA';
-    const parts = first.date.replace(',', '').split(' ');
+    const next = this.getNextUpcomingDate(tour) ?? tour.dates.find(d => d.status !== 'tbc');
+    if (!next) return 'Date TBA';
+    const parts = next.date.replace(',', '').split(' ');
     return `From ${parts[1]?.substring(0, 3)} ${parts[2]}`;
   }
 
+  // The next show to spotlight: the soonest date that hasn't passed, falling
+  // back to the first confirmed date if the whole tour is already in the past.
   getFirstConfirmedDate(tour: ArtistTour): TourDate | null {
-    return tour.dates.find(d => d.status !== 'tbc') ?? null;
+    return this.getNextUpcomingDate(tour) ?? tour.dates.find(d => d.status !== 'tbc') ?? null;
   }
 
   getDayName(dateStr: string): string {

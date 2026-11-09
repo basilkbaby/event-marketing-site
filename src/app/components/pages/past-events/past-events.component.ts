@@ -29,6 +29,17 @@ export class PastEventsComponent implements OnInit {
 
   private readonly pastTours: PastTour[] = [
     {
+      id: 4,
+      year: 2026,
+      period: 'Oct – Nov 2026',
+      artistName: 'M.G. Sreekumar',
+      tourName: 'Live Kondattam - UK Tour 2026',
+      category: 'Music Concert',
+      posterUrl: 'https://eventmanagementimages.blob.core.windows.net/event-images/mgsreekumarallv1.jpeg',
+      cities: ['Leicester', 'Manchester', 'Cardiff', 'London', 'Bournemouth', 'Worthing'],
+      showCount: 6
+    },
+    {
       id: 3,
       year: 2026,
       period: 'Feb – Mar 2026',

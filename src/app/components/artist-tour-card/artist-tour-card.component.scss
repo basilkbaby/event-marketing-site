@@ -163,6 +163,7 @@ $text-faint: rgba(255, 255, 255, 0.3);
   &:hover { background: $surface-hover; }
   &.is-tbc { opacity: 0.5; }
   &.is-sold-out { opacity: 0.6; }
+  &.is-past { opacity: 0.45; }
 
   @media (max-width: 1024px) {
     grid-template-columns: 64px 1fr auto;
@@ -338,4 +339,15 @@ $text-faint: rgba(255, 255, 255, 0.3);
   padding: 5px 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.badge-ended {
+  font-size: 11px;
+  font-weight: 700;
+  color: $text-faint;
+  border: 1px solid $line;
+  padding: 5px 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
 }
