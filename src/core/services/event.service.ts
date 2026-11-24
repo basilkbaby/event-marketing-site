@@ -115,7 +115,7 @@ export class EventService {
           comingSoon: false
         }
       ],
-      image: 'https://eventmanagementimages.blob.core.windows.net/v4-entertainment/mentalist-aathi.jpeg'
+      image: 'https://eventmanagementimages.blob.core.windows.net/v4-entertainment/mentalist-aathi/Insom_V4_Post3_UK_TOUR.png'
     },
     {
       id: 2,
