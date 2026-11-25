@@ -129,16 +129,16 @@ export class EventService {
         {
           id: 201,
           date: '12 February, 2027',
-          venue: 'Venue To Be Announced',
-          city: 'Leeds',
+          venue: 'Maher Centre',
+          city: 'Leicester',
           status: 'on-sale',
           comingSoon: true
         },
         {
           id: 202,
           date: '13 February, 2027',
-          venue: 'Venue To Be Announced',
-          city: 'Glasgow',
+          venue: 'Life Centre',
+          city: 'Bournemouth',
           status: 'on-sale',
           comingSoon: true
         },
@@ -153,7 +153,7 @@ export class EventService {
         {
           id: 204,
           date: '19 February, 2027',
-          venue: 'Venue To Be Announced',
+          venue: 'Alban Arena, St Albans',
           city: 'London',
           status: 'on-sale',
           comingSoon: true
@@ -161,7 +161,7 @@ export class EventService {
         {
           id: 205,
           date: '20 February, 2027',
-          venue: 'Venue To Be Announced',
+          venue: 'Maidstone Leisure Centre',
           city: 'Maidstone',
           status: 'on-sale',
           comingSoon: true
@@ -169,7 +169,7 @@ export class EventService {
         {
           id: 206,
           date: '21 February, 2027',
-          venue: 'Venue To Be Announced',
+          venue: 'Memo Arts Centre',
           city: 'Cardiff',
           status: 'on-sale',
           comingSoon: true
@@ -177,15 +177,15 @@ export class EventService {
         {
           id: 207,
           date: '26 February, 2027',
-          venue: 'Venue To Be Announced',
-          city: 'Leicester',
+          venue: 'North Church Arena',
+          city: 'Leeds',
           status: 'on-sale',
           comingSoon: true
         },
         {
           id: 208,
           date: '27 February, 2027',
-          venue: 'Venue To Be Announced',
+          venue: 'Edge Arena, Wigan',
           city: 'Manchester',
           status: 'on-sale',
           comingSoon: true
@@ -193,7 +193,7 @@ export class EventService {
         {
           id: 209,
           date: '28 February, 2027',
-          venue: 'Venue To Be Announced',
+          venue: 'Kings Hall',
           city: 'Stoke-on-Trent',
           status: 'on-sale',
           comingSoon: true
